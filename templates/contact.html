@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Craft Community Hub</title>
+    <link rel="stylesheet" href="../static/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-store"></i> Craft Community Hub</h1>
+        <ul>
+            <li><a href="/customer-dashboard"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/products"><i class="fas fa-gift"></i> Products</a></li>
+            <li><a href="/ratings"><i class="fas fa-star"></i> Ratings</a></li>
+            <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="/cart" class="cart-icon"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+            <li><a href="/my-orders">My Orders</a></li>
+            <li><a href="/logout" class="fas fa-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 class="main-title">Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us. We're here to help and would love to hear from you!</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Address: 123 Craft Lane, Art City, AC 12345</p>
+                <p><i class="fas fa-phone-alt"></i> Phone: +1 (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> Email: support@craftcommunityhub.com</p>
+            </div>
+
+            <form id="contact-form">
+                <label for="name"><i class="fas fa-user"></i> Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email"><i class="fas fa-at"></i> Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message"><i class="fas fa-comment-dots"></i> Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../static/contact.js"></script>
+</body>
+</html>

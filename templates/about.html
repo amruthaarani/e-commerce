@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fashion Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #4a5568;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #4299e1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h2 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: #718096;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .about-section:nth-child(even) .about-content {
+            direction: ltr;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-content h3 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .about-content p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: #4299e1;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            color: #2d3748;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: #718096;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1><i class="fas fa-store"></i> Fashion Hub</h1>
+            <div class="nav-links">
+                <a href="/customer-dashboard"><i class="fas fa-home"></i> Home</a>
+                <a href="/products"><i class="fas fa-gift"></i> Products</a>
+                <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="/cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a href="/my-orders"><i class="fas fa-box"></i> My Orders</a>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>About Us</h2>
+            <p>Discover the story behind Fashion Hub and our commitment to bringing you the finest fashion products</p>
+        </div>
+
+        <div class="about-sections">
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/about/fashion-store.jpg') }}" alt="Fashion Store" onerror="this.src='https://via.placeholder.com/800x600?text=Fashion+Store'">
+                </div>
+                <div class="about-content">
+                    <h3>Our Story</h3>
+                    <p>Welcome to Fashion Hub! We are dedicated to bringing you the latest trends and timeless classics in fashion. Our mission is to provide a platform where style meets convenience, offering a carefully curated selection of clothing and accessories that cater to diverse tastes and preferences.</p>
+                    <p>We believe that fashion is a form of self-expression, and everyone deserves access to quality clothing that makes them feel confident and comfortable.</p>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/about/fashion-collection.jpg') }}" alt="Fashion Collection" onerror="this.src='https://via.placeholder.com/800x600?text=Fashion+Collection'">
+                </div>
+                <div class="about-content">
+                    <h3>Our Collection</h3>
+                    <p>At Fashion Hub, we offer a diverse range of clothing and accessories for men, women, and children. From casual wear to formal attire, our collection is designed to cater to every occasion and style preference. We carefully select each item to ensure quality, comfort, and style.</p>
+                    <p>Our platform showcases the latest fashion trends while maintaining a selection of timeless pieces that never go out of style.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4>Quality First</h4>
+                <p>We ensure that every product meets our high standards of quality and craftsmanship.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Customer Focus</h4>
+                <p>Your satisfaction is our priority. We strive to provide exceptional service and support.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h4>Sustainability</h4>
+                <p>We are committed to promoting sustainable fashion and ethical practices.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Innovation</h4>
+                <p>We continuously evolve to bring you the latest trends and shopping experiences.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

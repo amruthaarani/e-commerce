@@ -1,0 +1,353 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.homepage {
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%), url('https://source.unsplash.com/random/1920x1080/?craft');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3a7bd5;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3a7bd5;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px; /* Adjusted padding */
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="20" fill="%23ffffff22"/></svg>');
+    background-size: 30px 30px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+.header h1 {
+    font-size: 3em; /* Adjusted font size */
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.header p {
+    font-size: 1.3em; /* Adjusted font size */
+    position: relative;
+    z-index: 1;
+}
+
+/* Craft Details Styles */
+.craft-details {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.craft-details h2 {
+    font-size: 2.2em; /* Adjusted font size */
+    color: #3a7bd5;
+    margin-bottom: 20px;
+}
+
+.craft-details p {
+    font-size: 1.1em; /* Adjusted font size */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Craft Gallery Styles */
+.craft-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    background: #f0f4f8;
+}
+
+.craft-item {
+    width: calc(33.333% - 20px);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.craft-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.craft-item img {
+    width: 100%;
+    height: 200px; /* Reduced image height */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.craft-item:hover img {
+    transform: scale(1.1);
+}
+
+.craft-item h3 {
+    margin: 20px 0 10px;
+    font-size: 1.6em; /* Adjusted font size */
+    color: #3a7bd5;
+}
+
+.craft-item p {
+    padding: 0 20px 20px;
+    font-size: 1em;
+}
+
+/* Craft Values Styles */
+.craft-values {
+    text-align: center;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.craft-values::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50 15, 100 100, 0 100" fill="%23ffffff11"/></svg>');
+    background-size: 50px 50px;
+    animation: rotateBackground 30s linear infinite;
+}
+
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.craft-values h2 {
+    font-size: 2.2em; /* Adjusted font size */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.craft-values p {
+    font-size: 1.1em; /* Adjusted font size */
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Login Section Styles */
+.login-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 20px;
+    background: #f0f4f8;
+}
+
+.login-card {
+    width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-10px);
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Adjusted font size */
+    color: #3a7bd5;
+}
+
+.login-card button {
+    background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em; /* Adjusted font size */
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-card button:hover {
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    transform: scale(1.05);
+}
+
+.login-card p {
+    font-size: 0.9em; /* Adjusted font size */
+    margin-top: 20px;
+}
+
+.login-card a {
+    color: #3a7bd5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-card a:hover {
+    color: #00d2ff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+    .craft-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+    .nav-active {
+        transform: translateX(0%);
+    }
+    .nav-active li {
+        opacity: 1;
+    }
+    .craft-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+    .header p {
+        font-size: 1.1em;
+    }
+    .craft-details h2, .craft-values h2 {
+        font-size: 1.8em;
+    }
+    .craft-details p, .craft-values p {
+        font-size: 1em;
+    }
+    .login-card h2 {
+        font-size: 1.5em;
+    }
+    .login-card button {
+        font-size: 1em;
+    }
+    .login-card p {
+        font-size: 0.8em;
+    }
+}

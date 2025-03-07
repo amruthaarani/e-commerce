@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="{{ product.imageurl }}" class="img-fluid rounded-start" alt="{{ product.productname }}">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ product.productname }}</h2>
+                        <p class="text-muted">Category: {{ product.productcategory }}</p>
+                        <h4 class="text-primary">Price: ₹{{ product.productprice }}</h4>
+                        <p><strong>Stock:</strong> {{ product.productstock }}</p>
+                        <p><strong>Color:</strong> {{ product.productcolor }}</p>
+                        <p><strong>Rating:</strong> {{ product.productrating }}/5</p>
+                        <p class="card-text">{{ product.productdescription }}</p>
+                        <p><strong>Available Sizes:</strong> {{ ", ".join(product.sizes) }}</p>
+                        <a href="/addtocart/{{ product._id }}" class="btn btn-purple" style="background-color: #6f42c1; color: white;">
+                            Add to Cart
+                        </a>                        
+                        <a href="/products" class="btn btn-secondary">Back to Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #35a81d;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a i {
+    margin-right: 5px; /* Space between icon and text */
+    font-size: 1.2em; /* Size of the icons */
+}
+
+.navbar ul li a:hover {
+    background-color: #229031;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 40px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 4em;
+    color: #333;
+    border-bottom: 4px solid #35a81d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.reviews-list {
+    margin-top: 20px;
+    display: grid; /* Use grid layout for reviews */
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    gap: 20px; /* Space between cards */
+    justify-items: center; /* Center align cards */
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px; /* Set max width for uniformity */
+    text-align: left; /* Align text to the left */
+    padding: 15px; /* Padding around the review */
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between; /* Space between reviewer name and stars */
+    align-items: center; /* Center align the header items */
+}
+
+.review-stars {
+    color: gold; /* Color for the star ratings */
+    font-size: 1.5em; /* Size of the stars */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .reviews-list {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}

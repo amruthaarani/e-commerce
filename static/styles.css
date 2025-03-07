@@ -1,0 +1,197 @@
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.homepage {
+    background-image: url('image2.jpg'), url('image3.jpg');
+    background-size: cover, cover;
+    background-position: center, top;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #333;
+}
+
+.header {
+    background: rgba(40, 100, 36, 0.8);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.header h1 {
+    font-size: 3.5em;
+}
+
+.header p {
+    font-size: 1.5em;
+}
+
+.craft-details {
+    text-align: center;
+    padding: 20px;
+    background: rgba(90, 129, 161, 0.8);
+}
+
+.craft-details h2 {
+    font-size: 2.5em;
+}
+
+.craft-details p {
+    font-size: 1.2em;
+}
+
+.craft-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.craft-item {
+    width: 45%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.craft-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.craft-item h3 {
+    margin: 15px 0 10px;
+    font-size: 2em;
+}
+
+.craft-item p {
+    padding: 0 15px 15px;
+    font-size: 1.1em;
+}
+
+.craft-values {
+    text-align: center;
+    background: rgba(103, 141, 165, 0.8);
+    padding: 40px 20px;
+}
+
+.craft-values h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.craft-values p {
+    font-size: 1.2em;
+    color: #2a272dd4;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(86, 91, 86, 0.8);
+}
+
+.login-card {
+    width: 300px;
+    margin: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.login-card button {
+    background-color: #5a9d5c;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.login-card button:hover {
+    background-color: #569959;
+}
+
+.login-card p {
+    font-size: 1em;
+}
+
+.login-card a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.login-card a:hover {
+    text-decoration: underline;
+}
+
+.signup-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-container label {
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.signup-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-container button {
+    background-color: #5a9d5c;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-container button:hover {
+    background-color: #569959;
+}
+
+.signup-container p {
+    margin-top: 15px;
+    font-size: 1em;
+}

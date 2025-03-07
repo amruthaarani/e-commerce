@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category_name }} - Fashion Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">Fashion Hub</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/customer-dashboard" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-home"></i> Home</a>
+                    <a href="/products" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-gift"></i> Products</a>
+                    <a href="/about" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-info-circle"></i> About</a>
+                    <a href="/cart" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-shopping-cart"></i> Cart</a>
+                    <a href="/my-orders" class="text-gray-700 hover:text-indigo-600">My Orders</a>
+                    <a href="/logout" class="text-gray-700 hover:text-indigo-600">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">{{ category_name }}</h2>
+            <a href="/products" class="text-indigo-600 hover:text-indigo-800">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Categories
+            </a>
+        </div>
+
+        {% if l == 0 %}
+        <div class="text-center py-12">
+            <p class="text-xl text-gray-600">No products found in this category.</p>
+        </div>
+        {% else %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {% for item in data %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{{ item[1] }}" alt="{{ item[2] }}" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ item[2] }}</h3>
+                    <div class="flex justify-between items-center">
+                        <a href="/addtocart/{{ item[0] }}" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
+                            Add to Cart
+                        </a>
+                        <a href="/view-product/{{ item[0] }}" class="text-indigo-600 hover:text-indigo-800">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Fashion Hub</title>
+    <link rel="stylesheet" href="../static/seller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .order-details {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-id {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .customer-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .info-group {
+            margin-bottom: 1rem;
+        }
+
+        .info-group strong {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .products-table th,
+        .products-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .products-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .total-section {
+            text-align: right;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .status-Pending { background: #fff3cd; color: #856404; }
+        .status-Processing { background: #cce5ff; color: #004085; }
+        .status-Shipped { background: #d4edda; color: #155724; }
+        .status-Delivered { background: #d1e7dd; color: #0f5132; }
+        .status-Cancelled { background: #f8d7da; color: #721c24; }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-store"></i> Fashion Hub</h1>
+        <ul>
+            <li><a href="/seller-dashboard"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/manage-products"><i class="fas fa-box"></i> Manage Products</a></li>
+            <li><a href="/orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="/earnings"><i class="fas fa-dollar-sign"></i> Earnings</a></li>
+            <li><a href="/profile"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="/support"><i class="fas fa-question-circle"></i> Support</a></li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="order-details">
+            <div class="order-header">
+                <div>
+                    <h2 class="main-title">Order Details</h2>
+                    <span class="order-id">Order ID: {{ order['_id'] }}</span>
+                </div>
+                <span class="status-badge status-{{ order['status'] }}">{{ order['status'] }}</span>
+            </div>
+
+            <div class="customer-info">
+                <div class="info-group">
+                    <strong><i class="fas fa-user"></i> Customer Name</strong>
+                    <span>{{ order['name'] }}</span>
+                </div>
+                <div class="info-group">
+                    <strong><i class="fas fa-phone"></i> Contact Number</strong>
+                    <span>{{ order['phone'] }}</span>
+                </div>
+                <div class="info-group">
+                    <strong><i class="fas fa-envelope"></i> Email</strong>
+                    <span>{{ order['email'] }}</span>
+                </div>
+                <div class="info-group">
+                    <strong><i class="fas fa-map-marker-alt"></i> Delivery Address</strong>
+                    <span>{{ order['address'] }}</span>
+                </div>
+                <div class="info-group">
+                    <strong><i class="fas fa-calendar"></i> Order Date</strong>
+                    <span>{{ order['created_at'] }}</span>
+                </div>
+            </div>
+
+            <h3><i class="fas fa-box"></i> Products in Order</h3>
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price (per unit)</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in order['products'] %}
+                    <tr>
+                        <td>{{ product['name'] }}</td>
+                        <td>{{ product['quantity'] }}</td>
+                        <td>₹{{ "%.2f"|format(product['price']) }}</td>
+                        <td>₹{{ "%.2f"|format(product['total_price']) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="total-section">
+                <h3>Order Summary</h3>
+                <p class="total-amount">Total Amount: ₹{{ "%.2f"|format(order['total_amount']) }}</p>
+            </div>
+
+            <div class="actions">
+                <a href="/orders" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Orders
+                </a>
+                
+                {% if order['status'] != 'Delivered' and order['status'] != 'Cancelled' %}
+                <form action="/update-order-status/{{ order['_id'] }}" method="POST" style="display: inline;">
+                    <select name="status" onchange="this.form.submit()" class="btn btn-primary">
+                        <option value="">Update Status</option>
+                        <option value="Processing" {% if order['status'] == 'Processing' %}selected{% endif %}>Processing</option>
+                        <option value="Shipped" {% if order['status'] == 'Shipped' %}selected{% endif %}>Shipped</option>
+                        <option value="Delivered" {% if order['status'] == 'Delivered' %}selected{% endif %}>Delivered</option>
+                        <option value="Cancelled" {% if order['status'] == 'Cancelled' %}selected{% endif %}>Cancelled</option>
+                    </select>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

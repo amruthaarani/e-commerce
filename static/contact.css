@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #35a81d;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li a i {
+    margin-right: 5px; /* Space between icon and text */
+    font-size: 1.2em;
+}
+
+.navbar ul li a:hover {
+    background-color: #229031;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.5em;
+    color: #333;
+    border-bottom: 4px solid #35a81d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container label {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.contact-container label i {
+    margin-right: 8px; /* Space between icon and label text */
+    color: #35a81d;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-container input[type="text"]:focus,
+.contact-container input[type="email"]:focus,
+.contact-container textarea:focus {
+    border-color: #35a81d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(53, 168, 29, 0.3);
+}
+
+.contact-container button {
+    padding: 10px 15px;
+    background-color: #35a81d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container button i {
+    margin-right: 5px; /* Space between icon and button text */
+}
+
+.contact-container button:hover {
+    background-color: #229031;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        padding: 60px 20px;
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.5em;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9em;
+        padding: 5px;
+    }
+
+    .main-title {
+        font-size: 2em;
+    }
+}

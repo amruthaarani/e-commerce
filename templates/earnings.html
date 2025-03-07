@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings - Craft Community Hub</title>
+    <link rel="stylesheet" href="../static/seller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-store"></i> Craft Community Hub</h1>
+        <ul>
+            <li><a href="/seller-dashboard"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/manage-products"><i class="fas fa-box"></i> Manage Products</a></li>
+            <li><a href="/orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="/earnings"><i class="fas fa-dollar-sign"></i> Earnings</a></li>
+            <li><a href="/profile"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="/support"><i class="fas fa-question-circle"></i> Support</a></li>
+            <li><a href="/logout"><i class="fas fa-logout"></i>Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 class="main-title">Earnings</h2>
+        <p>Track your earnings and view detailed reports.</p>
+        
+        <div class="earnings-overview">
+            <div class="earnings-card">
+                <h3>Total Earnings</h3>
+                <p>Rs. <span id="total-earnings">{{ total_earnings }}</span></p>
+            </div>
+            <div class="earnings-card">
+                <h3>Pending Earnings</h3>
+                <p>Rs. <span id="pending-earnings">{{ pending_earnings }}</span></p>
+            </div>
+            <div class="earnings-card">
+                <h3>Completed Sales</h3>
+                <p><span id="completed-sales">{{ completed_sales }}</span></p>
+            </div>
+        </div>
+
+        <h3 class="section-title">Earnings Breakdown</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="earnings-table-body">
+                {% for earning in earnings_data %}
+                <tr>
+                    <td>{{ earning['date'].strftime('%Y-%m-%d') }}</td>
+                    <td>{{ earning['order_id'] }}</td>
+                    <td>
+                        <ul>
+                            {% for product in earning['products'] %}
+                            <li>{{ product['productname'] }} - Qty: {{ product['quantity'] }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>Rs. {{ earning['total'] }}</td>
+                    <td>{{ earning['status'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

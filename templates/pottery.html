@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pottery Products - Craft Community Hub</title>
+    <link rel="stylesheet" href="../static/styles1.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-store"></i> Craft Community Hub</h1>
+        <ul>
+            <li><a href="/customer-dashboard"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/products"><i class="fas fa-gift"></i> Products</a></li>
+            <li><a href="/ratings"><i class="fas fa-star"></i> Ratings</a></li>
+            <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="/cart" class="cart-icon"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+            <li><a href="/my-orders">My Orders</a></li>
+            <li><a href="/logout" class="fas fa-logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2 class="main-title">Pottery Collection</h2>
+        <div class="products-list">
+            {%for i in range(l)%}
+                <div class="product-card">
+                    <img src="{{data[i][1]}}" alt="Pottery Bowls" class="product-image">
+                    <h3>{{data[i][2]}}</h3>
+                    
+                    <a href="/pottery-product/{{data[i][0]}}" class="view-more"><i class="fas fa-eye"></i> View  Details</a>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>

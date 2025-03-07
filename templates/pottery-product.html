@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pottery Bowls - Craft Community Hub</title>
+    <link rel="stylesheet" href="../static/styles2.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-store"></i> Craft Community Hub</h1>
+        <ul>
+            <li><a href="/customer-dashboard"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/products"><i class="fas fa-gift"></i> Products</a></li>
+            <li><a href="/ratings"><i class="fas fa-star"></i> Ratings</a></li>
+            <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="/cart" class="cart-icon"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+            <li><a href="/my-orders">My Orders</a></li>
+            <li><a href="/logout" class="fas fa-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="product-details">
+            <h2>{{product['productname']}}</h2>
+            <img src="{{product['imageurl']}}" alt="Pottery Bowls" class="product-image">
+            <div class="details">
+                <p><strong>Description:</strong> {{product['productdescription']}}</p>
+                <p><strong>Price:</strong> ₹{{product['productprice']}}</p>
+                <p><strong>Stock:</strong> {{product['productstock']}}</p>
+                <p><strong>Color:</strong> {{product['productcolor']}}</p>
+                <p><strong>Rating:</strong> {{product['productrating']}}</p>
+                <form action="/addtocart/{{product['_id']}}" method="post">
+                <label for="qty">Qty:</label>
+                <select id="qty" name="qty" class="item-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <button class="add-to-cart" type="submit">Add to Cart</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
